@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   padding: 0;
 }
 
-/* заголовки / абзацы */
+/* заголовки */
 .title-one {
   font-family: 'Inter';
   font-style: normal;
@@ -92,6 +92,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   color: var(--basic-extra-dark);
 }
 
+/* абзацы */
 .paragraph-two {}
 
 .paragraph-tree {
@@ -111,6 +112,49 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   line-height: 20px;
 }
 
+.button {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  padding: 12px 32px;
+  color: var(--basic-extra-dark);
+  background: var(--basic-extra-light);
+  border-radius: 30px;
+  outline: 4px solid rgba(252, 252, 252, 0.4);
+  box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background: rgba(252, 252, 252, 0.4);
+  outline: 4px solid var(--basic-extra-light);
+  box-shadow: 0px 4px 15px rgba(133, 133, 133, 0.15);
+}
+
+.button:focus {
+  background: var(--basic-extra-light);
+  outline: 2px solid var(--basic-extra-dark);
+  box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+}
+
+.button:active {
+  background: rgba(252, 252, 252, 0.4);
+  outline: 2px solid var(--basic-extra-dark);
+  box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+}
+
+.button:disabled {
+  background: var(--basic-light);
+  outline: 4px solid rgba(252, 252, 252, 0.4);
+}
+
+/* ! доделать кнопку в стадии загрузки */
+
 /* page-header */
 .page-header {
   width: 1170px;
@@ -126,6 +170,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 .page-header-logo {
   margin-right: 32px;
+  margin-bottom: 24px;
 }
 
 .page-header-list {
@@ -135,6 +180,17 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.page-header-catalog {
+  border: none;
+  background: none;
+  font-family: 'Inter',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--basic-extra-dark);
 }
 
 .page-header-link {
@@ -159,7 +215,8 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .page-header-user-link {
-  padding: 6px 16px;
+  border: none;
+  padding: 8px 16px;
   color: var(--basic-extra-dark);
   background-color: rgba(252, 252, 252, 0.3);
   text-decoration: none;
@@ -237,6 +294,55 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 /* slider */
+.slider {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.slider-item {
+  display: flex;
+  align-items: center;
+  margin: 21px 0 0 26px;
+  padding-left: 70px;
+}
+
+.slider-item:first-of-type {
+  background-color: olive;
+}
+
+.pic-container {
+  display: flex;
+  align-items: center;
+}
+
+.slider-item-pic:first-of-type {
+  margin-right: 56px;
+}
+
+.slider-item-pic:last-of-type {
+  margin-left: 41px;
+}
+
+.slider-item-pic:not(:last-of-type) {
+  /* margin-right: auto; */
+}
+
+.slider-item-text-container {
+  width: 470px;
+  background-color: gray;
+  margin-right: 21px;
+}
+
+.slider-item-title {
+  margin-bottom: 24px;
+}
+
+.slider-item-description {
+  margin-bottom: 48px;
+
+}
+
+
 
 .slider-item-pic {
   background: url('../images/pink-circle.svg') center no-repeat;
