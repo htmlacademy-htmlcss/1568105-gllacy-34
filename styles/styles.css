@@ -66,7 +66,7 @@ body {
   background: var(--special-light); /* цвет 1-го слайда */
   /*background: var(--special-blue);*/ /* цвет 2-го слайда */
   /*background: var(--special-yellow);*/ /* цвет 3-го слайда */
-
+  /* замечания и рекоммендации учту - пока оставил  */
   /* рабочий шрифт / параграф 2 */
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .page-header {
   width: 1170px;
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 21px;
   padding: 24px 0;
   align-items: center;
 }
@@ -297,13 +297,9 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 .slider-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding-left: 70px;
-}
-
-.pic-container {
-  display: flex;
-  align-items: center;
 }
 
 .slider-item-pic:first-of-type {
@@ -312,6 +308,10 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 .slider-item-pic:last-of-type {
   margin-left: 41px;
+}
+
+.slider-text-pic-container {
+  display: flex;
 }
 
 .slider-item-text-container {
@@ -327,6 +327,31 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   margin-bottom: 48px;
 }
 
+.slider-pic-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider-button {
+  position: absolute;
+  display: block;
+  width: 38px;
+  height: 38px;
+  border: none;
+  cursor: pointer;
+  background: url('../images/icons/slider-arrow.svg');
+}
+
+.previous {
+  left: -19px;
+  transform: rotate(180deg);
+}
+
+.next {
+  left: 293px;
+}
+
 .slider-item-pic {
   background: url('../images/pink-circle.svg') center no-repeat;
   /* background: center center / 312px 312px no-repeat linear-gradient(to bottom, var(--special-extra-light) 0%, var(--special-extra-light) 100%); */
@@ -337,4 +362,10 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   height: 150px;
   background-size: 100px 100px;
   opacity: 40%;
+}
+
+.pagination-socials-container {
+  width: 1170px;
+  display: flex;
+  justify-content: space-between;
 }
