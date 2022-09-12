@@ -62,7 +62,9 @@
 body {
   min-width: 1366px;
   margin: 0 auto;
-  height: 100px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   background: var(--special-light); /* цвет 1-го слайда */
   /*background: var(--special-blue);*/ /* цвет 2-го слайда */
   /*background: var(--special-yellow);*/ /* цвет 3-го слайда */
@@ -290,6 +292,10 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 /* main • slider */
+.main-container {
+  flex-grow: 1;
+}
+
 .main-index {
   /* width: 1170px; */
   margin: 0 auto;
@@ -474,6 +480,36 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .slider-socials-link {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+
+/* footer */
+.page-footer {
+  width: 1170px;
+  margin: 0 auto;
+  background-color: olive;
+
+  ot
+
+}
+.page-footer-container {
+  display: flex;
+  padding-top: 48px;
+}
+
+.page-footer-socials {
+  display: flex;
+  list-style-type: none;
+}
+
+.page-footer-socials-item:not(:last-of-type) {
+  margin-right: 16px;
+}
+
+.page-footer-socials-link {
   display: block;
   width: 24px;
   height: 24px;
