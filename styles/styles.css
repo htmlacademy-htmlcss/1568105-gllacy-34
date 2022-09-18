@@ -59,6 +59,10 @@
   overflow: hidden;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   min-width: 1366px;
   margin: 0 auto;
@@ -501,17 +505,27 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   width: 1170px;
   display: flex;
   flex-wrap: wrap;
-  grid-gap: 30px;
+  gap: 30px;
   list-style-type: none;
 }
 
 .gifts-item {
-  display: flex;
-  /* justify-content: space-between; */
-  width: 570px;
-  height: 268px;
+  width: calc(570px - 36px);
+  padding: 36px 0 36px 36px;
   border-radius: 16px;
-  background: var(--special-neutral);
+  background-color: var(--special-neutral);
+}
+
+.gifts-item:nth-of-type(1) {
+  background:
+    url('../images/gift-raspberry.png') bottom right / 219px 268px no-repeat,
+    var(--special-neutral);
+}
+
+.gifts-item:nth-of-type(2) {
+  background:
+    url('../images/gift-marshmellow.png') bottom right / 219px 268px no-repeat,
+    var(--special-neutral);
 }
 
 .gifts-title {
@@ -520,20 +534,18 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   margin-bottom: 55px;
 }
 
-.gifts-item-text-container {
-  margin: 36px 0 36px 36px;
-}
-
 .gifts-item-title {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   margin-bottom: 28px;
+
 }
 
 .gifts-item-text {
   font-size: 16px;
   line-height: 22px;
+  width: 320px;
   margin-bottom: 28px;
 }
 
@@ -543,36 +555,40 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 /* * popular */
 
-.popular-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1170px;
-  gap: 30px;
-}
-
-.popular-item-wrapper {
-  width: 270px;
-  height: 332px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-}
-
-.popular-item {
-  height: 281px;
-  border-radius: 8px;
-  background-color: var(--basic-extra-light);
-}
-
-.popular-item-pic {
-  margin-top: -51px;
-}
-
 .popular-title {
   text-align: center;
   font-size: 32px;
   margin-bottom: 56px;
+  /* margin-bottom: calc(56px + 51px); */
+}
+
+.popular-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1170px;
+  gap: 81px 30px;
+  padding-top: 51px;
+}
+
+.popular-item {
+  width: calc(270px - (40px + 40px));
+  padding: 0 40px 24px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: var(--basic-extra-light);
+  flex-grow: 1 0;
+}
+
+.popular-item-container {
+  /* padding-top: 51px; */
+  /* position: absolute; */
+}
+
+.popular-item-pic {
+  display: block;
+  margin-top: -51px;
+
 }
 
 .popular-item-title {
@@ -582,10 +598,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: -5px 0 8px;
 }
 
-.popular-item-container {
-  width: 190px;
-  margin: 0 auto;
-}
+
 
 .popular-item-text {
   margin-bottom: 16px;
@@ -653,18 +666,14 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 
 
-
-
-
-
 /* * footer */
 .page-footer {
   width: 1170px;
   margin: 0 auto;
 
 
-  /* * контур блока */
-  outline: 3px dashed rgba(252, 252, 252, 0.3);
+  /* * граница блока */
+  border-top: 3px dashed rgba(252, 252, 252, 0.3);
 
 }
 .page-footer-container {
