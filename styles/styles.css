@@ -492,6 +492,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 /* * gifts */
+
+.gifts {
+  margin-bottom: 81px;
+}
+
 .gifts-list {
   width: 1170px;
   display: flex;
@@ -516,7 +521,6 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .gifts-item-text-container {
-  /* display: flex; */
   margin: 36px 0 36px 36px;
 }
 
@@ -536,6 +540,121 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .gifts-item-link {
   display: inline-block;
 }
+
+/* * popular */
+
+.popular-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1170px;
+  gap: 30px;
+}
+
+.popular-item-wrapper {
+  width: 270px;
+  height: 332px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.popular-item {
+  height: 281px;
+  border-radius: 8px;
+  background-color: var(--basic-extra-light);
+}
+
+.popular-item-pic {
+  margin-top: -51px;
+}
+
+.popular-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 56px;
+}
+
+.popular-item-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: -5px 0 8px;
+}
+
+.popular-item-container {
+  width: 190px;
+  margin: 0 auto;
+}
+
+.popular-item-text {
+  margin-bottom: 16px;
+}
+
+.popular-item-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popular-item-price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--basic-extra-dark);
+}
+
+.popular-item-button {
+  position: relative;
+  display: inline-block;
+  padding: 16px;
+  border-radius: 26px;
+  background-color: var(--special-extra-bright);
+  border: none;
+  cursor: pointer;
+  outline-offset: -2px;
+  transition: ease-out 0.125s;
+}
+
+.bin {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: var(--basic-extra-light);
+}
+
+.popular-item-button:focus {
+  outline: 2px solid var(--basic-extra-dark);
+}
+
+.popular-item-button:hover {
+  outline: 2px solid var(--special-extra-bright);
+  background-color: var(--basic-extra-light);
+}
+.popular-item-button:hover .bin {
+  fill: var(--basic-extra-dark);
+}
+
+.popular-item-button:active {
+  outline: 2px solid var(--special-extra-bright);
+  background-color: var(--special-extra-light);
+}
+
+.popular-item-button:disabled {
+  background-color: var(--basic-neutral);
+}
+.popular-item-button:disabled .bin {
+  fill: var(--basic-extra-dark);
+}
+
+
+
+
+
+
 
 
 /* * footer */
