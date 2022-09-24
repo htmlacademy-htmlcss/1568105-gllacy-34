@@ -83,7 +83,7 @@ body {
 }
 
 /* сброс браузерных отступов */
-h1, h2, h3, h4, h5, h6, p, ul, li {
+h1, h2, h3, h4, h5, h6, p, ul, dl, li {
   margin: 0;
   padding: 0;
 }
@@ -215,7 +215,29 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   background-position: center right 23px;
 }
 
-/* page-header */
+/* socials */
+.social {
+  border-radius: 50%;
+  outline: 2px solid rgba(252, 252, 252, 0.3);
+  transition: opacity ease-out 0.2;
+}
+
+.social:hover {
+  background-color: var(--basic-extra-dark);
+}
+
+.social:focus {
+  outline: 2px solid var(--basic-extra-dark);
+  outline-offset: -1px;
+  background-color: var(--basic-extra-dark);
+}
+
+.social:active {
+  opacity: 0.5;
+}
+
+
+/* * page-header */
 .page-header {
   width: 1170px;
   display: flex;
@@ -459,6 +481,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .slider-preview-button-wrapper {
   position: relative;
   top: 35%;
+  height: 150px;
 }
 
 .slider-preview-button {
@@ -568,6 +591,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   width: 24px;
   height: 24px;
   margin-top: -3px;
+  color: var(--basic-extra-light);
 }
 
 /* * gifts */
@@ -1042,37 +1066,80 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0 auto;
 }
 
+/* * contacts */
 .contacts {
-  width: 1170px;
-  min-height: 492px;
+  width: calc(1170px - 64px);
+  min-height: calc(492px - (64px * 2));
   border-radius: 16px;
   margin: 0 auto;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: 64px;
   background: url('../images/contacts-bg.jpg') 0 0 repeat-y;
 }
 
+.contacts-container {
+  width: calc(343px - (40px * 2));
+  min-height: calc(364px - (40px * 2));
+  border-radius: 8px;
+  padding: 40px;
+  background-color: var(--basic-extra-light);
+  box-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
+}
 
+.contacts-address {
+  margin-bottom: 5px;
+}
 
+.contacts-data-title {
+  font-style: normal;
+  margin-bottom: 12px;
+}
+
+.contacts-data-text {
+  margin-left: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--basic-extra-dark);
+  margin-bottom: 24px;
+}
+
+.contacts-data-span {
+  display: block;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--basic-dark);
+}
+
+.contacts-button {
+  margin-top: 8.5px;
+}
 
 /* * footer */
 .page-footer {
   width: 1170px;
   margin: 0 auto;
 
-
-  /* * граница блока */
-  border-top: 3px dashed rgba(252, 252, 252, 0.3);
-
 }
 .page-footer-container {
   display: flex;
   justify-content: space-between;
-  margin: 48px 0;
+  margin: 0 auto;
+  margin-top: 44px;
+  margin-bottom: 44px;
 }
 
 .page-footer-socials {
   display: flex;
   list-style-type: none;
   width: 193px;
+  margin-left: 4px;
 }
 
 .page-footer-socials-item:not(:last-of-type) {
@@ -1083,6 +1150,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   display: block;
   width: 24px;
   height: 24px;
+  color: var(--basic-extra-light);
 }
 
 .page-footer-info {
@@ -1091,10 +1159,20 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  margin-left: 34px;
+  margin-top: -3px;
+}
+
+.page-footer-info-row {
+  display: block;
+  height: 25px;
+  margin-bottom: 3px;
 }
 
 .page-footer-info-cell {
-  width: 150px;
+  width: 148px;
+  padding: 0;
+  /* display: inline-block; */
 }
 
 .page-footer-info-link {
@@ -1129,7 +1207,17 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .page-footer-info-link-current {
-  font-weight: 700; /* todo приделать сердечко псевдоэлементом */
+  position: relative;
+  font-weight: 700;
+}
+
+.page-footer-info-link-current::before {
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  left: -24px;
+  background: url('../images/icons/heart-fill.svg') center no-repeat;
 }
 
 .page-footer-info-cell:last-of-type {
@@ -1138,6 +1226,13 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 .page-footer-academy {
   width: 193px;
+  /* margin-top: 5px; */
+  margin-right: 14px;
+}
+
+.page-footer-academy-logo {
+  display: block;
+  margin-bottom: 10px;
 }
 
 .page-footer-academy-text-link {
