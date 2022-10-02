@@ -275,9 +275,9 @@
           <h2 class="visually-hidden">Подписаться на рассылку</h2>
           <p class="subscribe-text">Подпишитесь на нашу сладкую рассылку и будьте всегда<br>в курсе всего самого вкусного, что у нас происходит. Обещаем<br>не спамить и не слать всякой ненужной ерунды. Честно =)</p>
 
-          <form class="subscribe-form" method="post"> <!-- no action="#" -->
+          <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
             <label class="visually-hidden" for="subscribe-form-input">Введите ваш email</label>
-            <input class="subscribe-form-input" type="email" id="subscribe-form-input" name="subscribe-form-input" placeholder="email@example.com">
+            <input class="subscribe-form-input" type="email" id="subscribe-form-input" name="subscribe-form-input" placeholder="email@example.com"> <!-- !disabled -->
             <button class="subscribe-form-button button-add" type="submit">Отправить</button>
           </form>
         </div>
@@ -296,20 +296,20 @@
 
           <fieldset class="delivery-form-fieldset">
             <legend class="visually-hidden">Форма доставки мороженого</legend>
-            <form class="delivery-form" action="https://echo.htmlacademy.ru/" method="post">
+            <form class="delivery-form" action="https://echo.htmlacademy.ru/" method="post"> <!-- !доделать состояния и тултипы -->
               <div class="delivery-date">
                 <label class="delivery-form-label" for="delivery-form-date">Дата</label>
                 <input class="delivery-form-input date" type="text" id="delivery-form-date" name="delivery-form-date" placeholder="01.04.2020">
               </div>
               <div class="delivery-tel">
                 <label class="delivery-form-label" for="delivery-form-tel">Телефон</label>
-                <input class="delivery-form-input tel" type="phone" id="delivery-form-tel" name="delivery-form-tel" placeholder="+7 800 999-00-00">
+                <input class="delivery-form-input tel" type="tel" id="delivery-form-tel" name="delivery-form-tel" placeholder="+7 800 999-00-00">
               </div>
               <div class="delivery-address">
                 <label class="delivery-form-label" for="delivery-form-address">Адрес</label>
                 <input class="delivery-form-input address" type="text" id="delivery-form-address" name="delivery-form-address" placeholder="ул. Большая Конюшенная, 19/8">
               </div>
-              <button class="delivery-form-button button-add  " type="submit">Отправить</button>
+              <button class="delivery-form-button button-add" type="submit">Отправить</button>
             </form>
           </fieldset>
         </div>
@@ -339,8 +339,8 @@
         <button class="contacts-button button-add" type="button">Форма обратной связи</button>
       </div>
     </section>
-
   </main>
+
   <footer class="page-footer">
     <div class="page-footer-container">
       <ul class="page-footer-socials">
