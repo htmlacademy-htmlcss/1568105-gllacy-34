@@ -280,6 +280,59 @@ fieldset {
   opacity: 0.5;
 }
 
+/* form-input */
+.form-input {
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 0 0 16px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--basic-extra-dark);
+  box-shadow: inset 0 0 0 1px var(--basic-neutral);
+}
+
+.form-input::placeholder {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--basic-neutral);
+}
+
+.form-input:hover {
+  box-shadow: inset 0 0 0 1px var(--basic-extra-dark);
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--basic-extra-dark);
+}
+
+.form-input:invalid {
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--status-error);
+}
+
+.form-input:invalid:hover {
+  box-shadow: inset 0 0 0 2px var(--status-error);
+}
+
+.form-input:disabled {
+  background-color: var(--basic-light);
+}
+
+.form-input:disabled:hover {
+  box-shadow: inset 0 0 0 1px var(--basic-neutral);
+}
+
+.form-input:disabled:hover::placeholder {
+  color: var(--basic-extra-dark);
+}
 
 /* * page-header */
 .page-header {
@@ -1028,7 +1081,6 @@ fieldset {
 
 .subscribe-container {
   width: calc(558px - (26px * 2));
-
   border-radius: 16px;
   background-color: var(--basic-extra-light);
   margin: 6px;
@@ -1042,53 +1094,6 @@ fieldset {
 
 .subscribe-form-input {
   width: calc(332px - 16px);
-  height: 48px;
-  outline: 1px solid var(--basic-neutral);
-  border: none;
-  border-radius: 4px;
-  padding: 0 0 0 16px;
-}
-
-.subscribe-form-input:hover {
-  outline-color: var(--basic-extra-dark);
-}
-
-.subscribe-form-input:focus {
-  outline: 2px solid var(--basic-extra-dark);
-}
-
-.subscribe-form-input:invalid {
-  outline: 1px solid var(--status-error);
-}
-
-.subscribe-form-input:invalid:hover {
-  outline: 2px solid var(--status-error);
-  }
-
-.subscribe-form-input:disabled:hover > .subscribe-form-input::placeholder {
-  /* background-color: var(--basic-extra-dark); */
-  color: black;
-}
-
-.subscribe-form-input:disabled {
-  outline: 1px solid var(--basic-neutral);
-  background-color: var(--basic-light);
-}
-
-
-
-/* .subscribe-form-input:disabled:hover {
-  outline: 1px solid var(--basic-extra-dark);
-  background-color: var(--basic-light);
-} */
-
-.subscribe-form-input::placeholder {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--basic-neutral);
 }
 
 .subscribe-form-button {
@@ -1204,25 +1209,8 @@ fieldset {
 
 .delivery-form-input {
   display: block;
-  height: 48px;
-  margin: 0;
-  padding: 0;
-  padding-left: 16px;
   box-sizing: border-box;
-  border: 1px solid #B9B9B9;
-  border-radius: 4px;
 }
-
-.delivery-form-input::placeholder {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--basic-neutral);
-}
-
-
 
 .date {
   width: 117px;
@@ -1472,6 +1460,89 @@ fieldset {
   font-size: 12px;
   line-height: 16px;
   color: var(--basic-extra-dark);
+}
+
+/* * modal-container */
+
+.modal-container {
+  position: fixed;
+  /* top: 0; */
+  bottom: 3px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 52, 64, 0.3);
+  /* display: none; */
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 64px 66px;
+  background-color: var(--basic-extra-light);
+  border-radius: 8px;
+}
+
+.modal-feedback {
+  width: calc(570px - (64px * 2));
+}
+
+.modal-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--basic-extra-dark);
+  margin-bottom: 32px;
+}
+
+.feedback-form .field-group:not(:last-of-type) {
+  margin: 0 0 16px;
+}
+
+.feedback-form .form-input {
+  width: calc(100% - 16px);
+}
+
+.field-group:nth-of-type(3) .feedback-form-field {
+  height: calc(149px - 14px);
+  padding-top: 14px;
+  margin-bottom: 32px;
+}
+
+.feedback-form-button {
+  position: relative;
+  left: 292px;
+  bottom: 1px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 37px;
+  right: 36px;
+  width: 12.5px;
+  height: 12.5px;
+  border: none;
+  cursor: pointer;
+  background: url('../images/icons/close-btn.svg') center no-repeat var(--basic-extra-light);
+}
+
+.modal-close-button:hover {
+  opacity: 0.7;
+}
+
+.modal-close-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--basic-neutral);
+  border-radius: 2px;
+}
+
+.modal-close-button:active {
+  opacity: 0.3;
+  box-shadow: none;
 }
 
 /* ? product */
