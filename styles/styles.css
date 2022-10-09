@@ -133,11 +133,11 @@ fieldset {
   padding: 12px 32px;
   border-radius: 30px;
   color: var(--basic-extra-dark);
+  border: none;
   background-color: var(--basic-extra-light);
   outline: 4px solid rgba(252, 252, 252, 0.4);
   box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1);
   text-decoration: none;
-  border: none;
   cursor: pointer;
   transition: ease-out 0.15s;
 }
@@ -357,6 +357,7 @@ fieldset {
 
 .page-header-nav {
   display: flex;
+  margin-right: auto;
 }
 
 .page-header-logo {
@@ -379,9 +380,8 @@ fieldset {
 }
 
 .page-header-list {
-  width: 570px; /* с запасом на один пункт */
   display: flex;
-  flex-wrap: wrap; /* переполнение */
+  flex-wrap: wrap;
   list-style-type: none;
   margin-top: 10px;
 }
@@ -433,6 +433,10 @@ fieldset {
   display: none;
 }
 
+.page-header-item:hover .catalog-popup {
+  display: block;
+}
+
 .catalog-popup-item-link {
   display: block;
   padding: 16px 14px 3px 15px;
@@ -481,11 +485,11 @@ fieldset {
 }
 
 .page-header-address {
-  margin-left: auto;
-  margin-right: 17px;
+  /* margin-right: 17px; */
 }
 
 .page-header-phone {
+  min-width: 148px;
   display: inline-block;
   border-radius: 3px;
   font-style: normal;
@@ -511,11 +515,10 @@ fieldset {
 
 .page-header-user-list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 16px;
   list-style-type: none;
-}
-
-.page-header-user-item:not(:last-of-type) {
-  margin-right: 16px;
 }
 
 .page-header-user-link {
@@ -881,7 +884,7 @@ fieldset {
   width: 470px;
   margin-top: calc(136px - 26px) ;
   margin-right: 21px;
-
+  margin-bottom: 48px;
 }
 
 .slider-item-title {
@@ -948,6 +951,13 @@ fieldset {
   transform: rotate(180deg);
 }
 
+.slider-next {
+  top: 237px;
+  left: 293px;
+  cursor: pointer;
+  pointer-events: inherit;
+}
+
 .slider-button:hover {
   background-color: var(--basic-extra-light);
 }
@@ -971,11 +981,7 @@ fieldset {
   fill: var(--special-extra-light);
 }
 
-.slider-next {
-  top: 237px;
-  left: 293px;
-  cursor: pointer;
-}
+
 
 .slider-preview-button-wrapper {
   position: relative;
@@ -1097,6 +1103,7 @@ fieldset {
 
 .slider-socials {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
 }
 
@@ -1575,8 +1582,6 @@ fieldset {
   margin-bottom: 32px;
 }
 
-
-
 .delivery-form-label {
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -1681,12 +1686,13 @@ fieldset {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  margin-top: 47px;
+  margin-top: 44px;
   margin-bottom: 44px;
 }
 
 .page-footer-socials {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   width: 193px;
   margin-top: 1px;
@@ -1705,23 +1711,15 @@ fieldset {
 }
 
 .page-footer-info {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  margin-left: 34px;
-  margin-top: -3px;
+  width: 300px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.page-footer-info-row {
-  display: block;
-  height: 25px;
-  margin-bottom: 3px;
-}
-
-.page-footer-info-cell {
-  width: 148px;
+.page-footer-info-item {
+  width: 150px;
+  margin: 0;
   padding: 0;
 }
 
@@ -1773,10 +1771,6 @@ fieldset {
 
 .page-footer-info-link-current:hover::before {
   opacity: 0.5;
-}
-
-.page-footer-info-cell:last-of-type {
-  width: 182px;
 }
 
 .page-footer-academy {
@@ -2136,10 +2130,6 @@ fieldset {
 .fat-control:hover .fat-control-mark {
   box-shadow: 0 0 0 2px var(--basic-extra-light);
 }
-.fat-control:hover .fat-control-mark::before {
-  border: 3.25px solid var(--basic-extra-light);
-  box-sizing: border-box;
-}
 
 .control-input[type="radio"]:checked + .fat-control-mark::before {
   position: absolute;
@@ -2154,6 +2144,10 @@ fieldset {
   height: 6px;
   border-radius: 50%;
   background-color: var(--basic-extra-dark);
+}
+
+.control-input[type="radio"]:checked:hover + .fat-control-mark::before {
+  background-color: var(--basic-extra-light);
 }
 
 .control-input[type="radio"]:disabled + .fat-control-mark {
